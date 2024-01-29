@@ -1804,9 +1804,9 @@ void FBXExporter::WriteObjects ()
         sdnode.AddChild("Version", int32_t(100));
         double dDeformPercent = double(pAnimMesh->mWeight) * 100.;
         FBX::Node p("Properties70");
-        p.AddP70numberA("DeformPercent", double(pAnimMesh->mWeight * 100.));
+        p.AddP70numberA("DeformPercent", dDeformPercent);
         sdnode.AddChild(p);
-        sdnode.AddChild("DeformPercent", double(pAnimMesh->mWeight * 100.));
+        sdnode.AddChild("DeformPercent", dDeformPercent);
         // TODO: Normally just one weight per channel, adding stub for later development
         std::vector<double>fFullWeights;
         fFullWeights.push_back(100.);
